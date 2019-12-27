@@ -20,6 +20,8 @@ public:
 	//	Method draws the main screen on the window
 	////////////////////////////////////////////////////////////
 	virtual void draw(sf::RenderWindow*) override;
+	virtual void onEvent(sf::Event event) override;
+	virtual int getIndex() override;
 
 private:
 	sf::Font font;

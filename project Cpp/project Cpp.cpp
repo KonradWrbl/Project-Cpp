@@ -5,6 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "MainScreen.h"
+#include "MenuScreen.h"
+#include "CreatorScreen.h"
 
 #ifndef _DEBUG
 //Disabling terminal while in realease mode
@@ -13,7 +15,7 @@
 
 int main()
 {
-	Game game({ new MainScreen });
+	Game game({ new MenuScreen });
 	game.start();
 
 	return 0;

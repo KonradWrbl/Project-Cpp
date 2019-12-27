@@ -10,6 +10,10 @@ MainScreen::MainScreen()
 
 void MainScreen::draw(sf::RenderWindow* window)
 {
+	sf::RectangleShape back;
+	back.setSize({ 1040.0f, 480.0f });
+	back.setFillColor(sf::Color(11, 11, 11));
+	window->draw(back);
 	sf::Text disp("", this->font, 20);
 	sf::RectangleShape rect;
 	disp.setFillColor(sf::Color(0, 0, 0));
@@ -39,4 +43,13 @@ void MainScreen::draw(sf::RenderWindow* window)
 			window->draw(disp);
 		}
 	}
+}
+
+void MainScreen::onEvent(sf::Event event)
+{
+}
+
+int MainScreen::getIndex()
+{
+	return 0;
 }

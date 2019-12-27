@@ -167,17 +167,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CreatorScreen.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="MainScreen.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MenuScreen.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="project Cpp.cpp" />
     <ClCompile Include="Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CreatorScreen.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="MainScreen.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MenuScreen.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="State.h" />
