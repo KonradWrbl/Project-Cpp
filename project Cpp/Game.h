@@ -16,8 +16,11 @@ public:
 	////////////////////////////////////////////////////////////
 	void start();
 	void changeScreen(Screen*);
+	int viewHeight;
+	int viewWidth;
 private:
 	Screen* screen;
 	Map map;
+
 };
 
