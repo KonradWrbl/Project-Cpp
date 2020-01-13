@@ -17,7 +17,7 @@ public:
 	int getMapHeight();
 	bool getMazeTab(int x, int y);
 private:
-	std::vector<std::vector<bool>> mazeMap;
+	std::vector<std::vector<int>> mazeMap;
 	int width;
 	int height;
 };

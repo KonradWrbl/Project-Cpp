@@ -9,7 +9,7 @@ Game::Game(Screen * screen):screen(screen)
 
 void Game::start()
 {
-	sf::RenderWindow window(sf::VideoMode(1040, 480), "This is MAZE", sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode(2000, 1000), "This is MAZE", sf::Style::Close);
 	//this->map.load();
 
 	while (window.isOpen())

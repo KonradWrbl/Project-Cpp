@@ -73,10 +73,10 @@ void Map::check(Node** node, int dist)
 		if (j.y > 0 && !node[j.y - 1][j.x].visited && this->maze[j.y - 1][j.x] == State::White) {
 			temporaryNeighbours.push_back(node[j.y - 1][j.x]);
 		}
-		if (j.y < this->width - 1 && !node[j.y][j.x + 1].visited && this->maze[j.y][j.x + 1] == State::White) {
+		if (j.x < this->width - 1 && !node[j.y][j.x + 1].visited && this->maze[j.y][j.x + 1] == State::White) {
 			temporaryNeighbours.push_back(node[j.y][j.x + 1]);
 		}
-		if (j.y > 0 && !node[j.y][j.x - 1].visited && this->maze[j.y][j.x - 1] == State::White) {
+		if (j.x > 0 && !node[j.y][j.x - 1].visited && this->maze[j.y][j.x - 1] == State::White) {
 			temporaryNeighbours.push_back(node[j.y][j.x - 1]);
 		}
 	}
@@ -92,7 +92,7 @@ void Map::select(Node** tab)
 {
 	int x = 0, y = 0;
 
-	while (x != this->width - 1 || y != this->height - 1) {
+	while (x != this->width-1 || y != this->height-1) {
 		int dist = tab[y][x].dist;
 		tab[y][x].isPainted = true;
 		if (y < this->height - 1 && tab[y + 1][x].visited && tab[y + 1][x].dist < dist) {
@@ -107,7 +107,7 @@ void Map::select(Node** tab)
 			x++;
 			continue;
 		}
-		if (x > 0 - 1 && tab[y][x - 1].visited && tab[y][x - 1].dist < dist) {
+		if (x > 0 && tab[y][x - 1].visited && tab[y][x - 1].dist < dist) {
 			x--;
 			continue;
 		}

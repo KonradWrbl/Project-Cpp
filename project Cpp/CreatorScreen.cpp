@@ -13,14 +13,14 @@ CreatorScreen::CreatorScreen()
 void CreatorScreen::draw(sf::RenderWindow* window)
 {
 	sf::RectangleShape back;
-	back.setSize({ 1040.0f, 480.0f });
+	back.setSize({ 2000.0f, 1000.0f });
 	back.setFillColor(sf::Color(11, 11, 11));
 	window->draw(back);
 	sf::RectangleShape rect;
 	for (int i = 0; i < 20; i++) {
-		for (int j = 0; j < 20; j++) {
+		for (int j = 0; j < 15; j++) {
 			rect.setSize({ 50.0f, 50.0f });
-			rect.setPosition({ i * 51.0f + (window->getSize().x - 20 * 51.0f) / 2, j * 51.0f + (window->getSize().y - 20 * 51.0f) / 2 });
+			rect.setPosition({ i * 51.0f + (window->getSize().x - 20 * 51.0f) / 2, j * 51.0f + (window->getSize().y - 15 * 51.0f) / 2 });
 			rect.setFillColor(sf::Color(51, 51, 51));
 			window->draw(rect);
 		}
@@ -44,8 +44,8 @@ void CreatorScreen::saveToFile()
 	file << h << ' ' << w << "\n";
 	for (int i = 0; i < getMapWidth(); i++) {
 		for (int j = 0; j < getMapHeight(); j++) {
-			if (getMazeTab(i, j)) file << 'C';
-			else file << 'B';
+			if (getMazeTab(i, j)==1) file << 'B';
+			else file << 'C';
 		}
 		file << "\n";
 	}
@@ -55,7 +55,7 @@ void CreatorScreen::saveToFile()
 void CreatorScreen::setRandomSize()
 {
 	srand(time(NULL));
-	this->height = rand() % 20 + 3;
+	this->height = rand() % 17 + 3;
 	this->width = rand() % 30 + 3;
 }
 
@@ -63,12 +63,12 @@ void CreatorScreen::setMazeTab()
 {
 	int height = getMapHeight();
 	int width = getMapWidth();
-	this->mazeMap.resize(height);
-	for (int i = 0; i < height; i++) {
-		this->mazeMap[i].resize(width);
+	this->mazeMap.resize(width);
+	for (int i = 0; i < width; i++) {
+		this->mazeMap[i].resize(height);
 		//this->mazeMap[i].push_back(std::vector<bool>());
-		for (int j = 0; j < width; j++) {
-			this->mazeMap[i][j] = floor(rand() * 2);
+		for (int j = 0; j < height; j++) {
+			this->mazeMap[i][j] = floor(rand()%3);
 		}
 	}
 }
