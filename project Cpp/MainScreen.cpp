@@ -11,7 +11,7 @@ MainScreen::MainScreen()
 void MainScreen::draw(sf::RenderWindow* window)
 {
 	sf::RectangleShape back;
-	back.setSize({ 2000.0f, 1000.0f });
+	back.setSize({ 1800.0f, 900.0f });
 	back.setFillColor(sf::Color(11, 11, 11));
 	window->draw(back);
 	sf::Text disp("", this->font, 20);
